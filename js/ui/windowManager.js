@@ -480,7 +480,7 @@ var WindowManager = class WindowManager {
         }
 
         let type = actor.meta_window.get_window_type();
-        
+
         if (types !== null) {
             if (!types.includes(type)) {
                 return false;
@@ -847,7 +847,7 @@ var WindowManager = class WindowManager {
     _filterKeybinding(shellwm, binding) {
         // TODO: We can use ActionModes to manage what keybindings are
         // available where. For now, this allows global keybindings in a non-
-        // modal state. 
+        // modal state.
 
         return global.stage_input_mode !== Cinnamon.StageInputMode.NORMAL;
     }
@@ -1189,6 +1189,7 @@ var WindowManager = class WindowManager {
             if (hide) {
                 window.hide();
             }
+            cinnamonwm.completed_switch_workspace();
         }
 
         let finish_switch_workspace = (actor) =>
